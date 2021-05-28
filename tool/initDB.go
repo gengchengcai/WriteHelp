@@ -19,8 +19,7 @@ func InitDB() {
 		log.Fatal(err.Error())
 		panic(err)
 	}
-	_ = db.AutoMigrate(&model.Author{}, &model.Book{}, &model.Chapter{},
-		&model.ChapterSetting{}, &model.Rolesetting{}, &model.Inspiration{}, &model.PlotSetting{})
+	_ = db.AutoMigrate(&model.Author{}, &model.Book{}, &model.Chapter{}, &model.Rolesetting{}, &model.Inspiration{}, &model.PlotSetting{})
 
 	OrmDB = db
 
