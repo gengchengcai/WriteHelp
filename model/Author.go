@@ -6,7 +6,7 @@ import "gorm.io/gorm"
 type Author struct {
 	gorm.Model
 	UserName string `json:"username" form:"username" gorm:"type:varchar(64); not null; unique" binding:"required" `
-	PassWord string `json:"password" form:"password" gorm:"type:varchar(64); not null; unique" binding: "required" `
+	PassWord string `json:"password" form:"password" gorm:"type:varchar(64); not null" binding: "required" `
 	Books    []Book `json:"books" form:"books" `
 }
 
