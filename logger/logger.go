@@ -26,43 +26,31 @@ func InitLogrus(path string) {
 }
 
 //一般程序中输出的调试信息
-func LogDebug(params ...string) *logrus.Entry {
-	return Logger.WithFields(logrus.Fields{
-		"": params[0],
-	})
+func LogDebug(x map[string]interface{}) *logrus.Entry {
+	return Logger.WithFields(x)
 }
 
 //关键操作，核心流程的日志；
-func LogInfo() *logrus.Entry {
-	return Logger.WithFields(logrus.Fields{
-		"test": "test",
-	})
+func LogInfo(x map[string]interface{}) *logrus.Entry {
+	return Logger.WithFields(x)
 }
 
 //警告信息，提醒程序员注意
-func LogWarn(params ...string) *logrus.Entry {
-	return Logger.WithFields(logrus.Fields{
-		"": params[0],
-	})
+func LogWarn(x map[string]interface{}) *logrus.Entry {
+	return Logger.WithFields(x)
 }
 
 //错误日志，需要查看原因
-func LogError(params ...string) *logrus.Entry {
-	return Logger.WithFields(logrus.Fields{
-		"": params[0],
-	})
+func LogError(x map[string]interface{}) *logrus.Entry {
+	return Logger.WithFields(x)
 }
 
 //致命错误，出现错误时程序无法正常运转。输出日志后，程序退出；
-func LogFatal(params ...string) *logrus.Entry {
-	return Logger.WithFields(logrus.Fields{
-		"": params[0],
-	})
+func LogFatal(x map[string]interface{}) *logrus.Entry {
+	return Logger.WithFields(x)
 }
 
 //记录日志，然后panic
-func LogPanic(params ...string) *logrus.Entry {
-	return Logger.WithFields(logrus.Fields{
-		"": params[0],
-	})
+func LogPanic(x map[string]interface{}) *logrus.Entry {
+	return Logger.WithFields(x)
 }

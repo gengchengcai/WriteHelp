@@ -19,7 +19,8 @@ func (r *Routers) Register(c *gin.Context) {
 }
 
 func (r *Routers) Login(c *gin.Context) {
-	logger.LogInfo().Info("this is a test")
+
+	logger.LogInfo(map[string]interface{}{"test": 1}).Info("this is a test")
 	c.JSON(200, gin.H{
 		"test": "test",
 	})
