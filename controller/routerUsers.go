@@ -9,11 +9,6 @@ import (
 	"writer/tool"
 )
 
-func (r *Routers) CreateRouters(engine *gin.RouterGroup) {
-	engine.POST("register", r.Register)
-	engine.POST("login", r.Login)
-}
-
 func (r *Routers) Register(c *gin.Context) {
 	logger.LogInfo(map[string]interface{}{}).Info("用户进行注册")
 	var user model.Author
@@ -60,6 +55,6 @@ func (r *Routers) Login(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"code":    "200",
 		"message": "登录成功",
-		"data":    "allow", //这块应该给一个token
+		"data":    user.UserName, //这块应该给一个token
 	})
 }

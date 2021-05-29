@@ -11,12 +11,15 @@ func main() {
 
 	app := gin.Default()
 	tool.InitDB()
-	logger.InitLogrus("G:\\goland\\writer\\Log\\serve.log")
+	logger.InitLogrus("/home/gcc/github/WriteHelp/log/serve.log")
 	v1Group := app.Group("v1")
 	Router(v1Group)
 	app.Run()
 }
 
 func Router(engine *gin.RouterGroup) {
-	new(controller.Routers).CreateRouters(engine)
+	r := new(controller.Routers)
+	r.CreateRouters(engine)
+	r.CreateBookRouters(engine)
+
 }
