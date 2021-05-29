@@ -60,6 +60,6 @@ func (r *Routers) Login(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"code":    "200",
 		"message": "登录成功",
-		"data":    user, //这块应该给一个token
+		"data":    "allow", //这块应该给一个token
 	})
 }
